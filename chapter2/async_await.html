@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick = "fnAsyncAwait()">
+        aysync, await
+    </button>
+    <script>
+        async function fnAsyncAwait() {
+            // console.log(await fnProductReady(1, 2000));
+            // console.log(await fnProductReady(2, 2000));
+            // console.log(await fnProductReady(3, 500));
+            strRet = await fnProductReady(1, 2000);
+            console.log(strRet);
+        }
+        function fnProductReady(pNum, pTime) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log(pNum);
+                    resolve('delivered successfully');
+                }, pTime);
+            });
+        }
+    </script>
+</body>
+</html>

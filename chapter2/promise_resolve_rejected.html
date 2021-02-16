@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick = "
+        console.log('promise begins');
+        let bStatus = Math.random()> 0.5;
+        fnCreatePromiomise(bStatus)
+        .then(pResult =>console.log(pResult))
+        .catch(pErrMsg => console.error(pErrMsg));
+        console.log('promise finished');
+    ">
+    begin product!
+    </button>
+    <script>
+        function fnCreatePromiomise(pStatus) {
+            return new Promise((fnResolve, fnReject) => {
+                setTimeout(() => {
+                    if (pStatus) fnResolve('product successfully delivered');
+                    else fnReject('product delivery failed');
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>

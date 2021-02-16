@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>enter from 1 to 100</h1>
+    <input type="text" id = "comIn" value="">
+    <button onclick = "fnMeasure()">확인</button>
+    <p>result</p>
+    <textarea name="" id="comOutput" cols="30" rows="10"></textarea>
+
+    <script>
+        function fnMeasure() {
+            let iNumber, strResult;
+            iNumber = document.querySelector("#comIn").value;
+
+            if (iNumber >= 1 && iNumber <= 100) {
+                strResult = true;
+            }
+            else {
+                strResult = false;
+            }
+            
+            document.querySelector("#comOutput").innerHTML = strResult;
+            
+        }
+    </script>
+</body>
+</html>

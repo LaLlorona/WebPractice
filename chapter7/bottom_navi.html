@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 모바일 기기의 접속 시 화면 크기 조절을 위해 뷰포트 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <!-- vuetify.js에 필요한 스타일 파일 링크 연결 -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id = "app">
+    <v-app>
+      <v-content>
+        
+        <v-card height="100%" class = "d-flex display-2 align-center justify-center">choice: {{sSelect}}</v-card>
+      </v-content>
+      <v-footer>
+        <v-bottom-navigation fixed v-model = "sSelect" dark>
+          <!-- v-model="sSelect" automatically change sSelect to 'value' attribute of v-btn -->
+          <v-btn text value = "bicycle">bicycle
+            <v-icon>directions_bike</v-icon>
+          </v-btn>
+          <v-btn text value = "subway">subway
+            <v-icon>subway</v-icon>
+          </v-btn>
+          <v-btn text value = "bus">bus
+            <v-icon>directions_bus</v-icon>
+          </v-btn>
+        </v-bottom-navigation>
+      </v-footer>
+    </v-app>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: {
+        sSelect: 'bicycle'
+      }
+    })
+  </script>
+
+</body>
+
+</html>

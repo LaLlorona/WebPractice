@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 모바일 기기의 접속 시 화면 크기 조절을 위해 뷰포트 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <!-- vuetify.js에 필요한 스타일 파일 링크 연결 -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id = "app">
+    <v-app>
+      <v-app-bar app color = "blue" dark>
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <v-toolbar-title>hi this is my sloppy webpage</v-toolbar-title>
+      </v-app-bar>
+      <v-content>
+        
+        <v-container>
+          <v-row>
+            <v-col cols="12" sm="6" v-for="item in 6" v-bind:key = "item.id">
+              <v-card>
+                <v-card-text style = "height: 300px" class = "yellow lighten-4">
+                <v-img src= "./chicken.jpg" max-height = "250"></v-img>
+                </v-card-text>
+                <v-card-text style = "height: 120px; position:relative">
+                  <div class = "my-1">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed quae quidem eos rem asperiores autem eveniet quod nemo 
+                  molestiae mollitia voluptatibus consequuntur quasi quisquam dolores voluptates, necessitatibus placeat? Officiis, ut?
+                  </div>
+                  
+                  <v-btn absolute dark fab top right >
+                    <v-icon>add</v-icon>
+                  </v-btn>
+                  <!-- absolute in the relative's standard is the position of relative -->
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-content>
+    </v-app>
+    
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify()
+    })
+  </script>
+
+</body>
+
+</html>

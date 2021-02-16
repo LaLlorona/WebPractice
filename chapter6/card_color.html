@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <v-container>
+          <v-card max-width="400" class = "mb-2">
+            <v-img src="./chicken.jpg" aspect-ratio="2.3"></v-img>
+            <!-- aspect-ratio='x' => ratio of width and height is x -->
+            <v-card-text>
+              <div>
+                <h2 class="title primary--text mb-2">tasty fried chicken</h2>
+                super duper hyper tastier chicken you've never experienced before
+              </div>
+            </v-card-text>
+            <v-card-actions>
+              <v-btn v-on:click="fnTest" outlined color="red">choose</v-btn>
+              <v-btn background-color="#9c27B0">cancel</v-btn>
+            </v-card-actions>
+          </v-card>
+          <v-card max-width="400">
+            <v-img src="./chicken.jpg" aspect-ratio="2.3"></v-img>
+            <!-- aspect-ratio='x' => ratio of width and height is x -->
+            <v-card-text>
+              <div>
+                <h2 class="title primary--text mb-2">tasty fried chicken</h2>
+                super duper hyper tastier chicken you've never experienced before
+              </div>
+            </v-card-text>
+            <v-card-actions>
+              <v-btn v-on:click="fnTest" outlined color="red">choose</v-btn>
+              <v-btn background-color="#9c27B0">cancel</v-btn>
+            </v-card-actions>
+          </v-card>
+          <v-card max-width="400">
+            <v-img src="./chicken.jpg" aspect-ratio="2.3"></v-img>
+            <!-- aspect-ratio='x' => ratio of width and height is x -->
+            <v-card-text>
+              <div>
+                <h2 class="title primary--text mb-2">tasty fried chicken</h2>
+                super duper hyper tastier chicken you've never experienced before
+              </div>
+            </v-card-text>
+            <v-card-actions>
+              <v-btn v-on:click="fnTest" outlined color="red">choose</v-btn>
+              <v-btn background-color="#9c27B0">cancel</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js"></script>
+  
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      methods: {
+        fnTest() {
+          alert("asdf");
+        }
+      }
+    })
+  </script>
+</body>
+</html>

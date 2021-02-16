@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
+</head>
+<body>
+    <div id = "app">
+        <h1>hi!</h1>
+        <com-counter msg = "counter1"></com-counter>
+        <com-counter msg = "counter2"></com-counter> 
+    </div>
+</body>
+
+<script>
+    const store = new Vuex.Store({
+
+        state: {
+            count: 0
+        },
+
+        mutations: {
+
+            fnIncData: function(state) {
+                return state.count++;
+            },
+
+            fnDecData: state => state.count--
+        },
+        getters: {
+            
+            fnGetData(state) {
+                return state.count;
+            },
+        },
+        actions: {
+
+            async fnDecData({
+                commit 
+            }, state) {
+
+                const result = await api.fnDecrement();
+
+                if (result == true) commit('fnDecData')
+            }
+        }
+    });
+
+    const api = {
+        fnDecrement() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(true);
+                }, 1000)
+            });
+        }
+    };
+
+    Vue.component('com-counter', {
+        props: ['msg'],
+        template:`
+        <div>
+            <h2>{{ msg }}</h2>
+            <p>counter: {{fnGetCount}}</p>
+            <button v-on:click="fnIncCount"> +1 increase</button>
+            <button v-on:click="fnDecCount"> -1 decrease(remote api)</button>
+            <hr>
+        </div>
+        `,
+
+        computed: {
+            fnGetCount() {
+                return store.getters.fnGetData;
+            }
+        },
+
+        methods: {
+            fnIncCount() {
+                store.commit('fnIncData')//synchronos : commit - mutation
+            },
+
+            fnDecCount() {
+                store.dispatch('fnDecData')//asynchronos : dispatch - action
+            }
+        }
+    })
+    let gApp = new Vue({
+        el: '#app',
+        store
+    })
+</script>
+</html>

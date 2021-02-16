@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "main">
+        
+        <ul>
+            <li v-for = "(item, index) in aPersons">
+                number: {{index}}
+                <br>
+                name: {{item.name}}
+                <br>
+                age: {{item.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        let main = new Vue({
+            el: '#main',
+            data : {
+                aPersons: [
+                    {name : 'hong', age: 27},
+                    {name : 'lee' , age: 27},
+                    {name : 'kim', age: 14}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
